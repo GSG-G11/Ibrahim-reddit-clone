@@ -1,4 +1,24 @@
 {
+  "name": "ibrahim-reddit-clone",
+  "description": "A clone of reddit website main functionality.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start":"node src/index.js",
+    "dev":"cross-env NODE_ENV=dev nodemon src/index.js",
+    "test": "cross-env NODE_ENV=test jest --detectOpenHandles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GSG-G11/Ibrahim-reddit-clone.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GSG-G11/Ibrahim-reddit-clone/issues"
+  },
+  "homepage": "https://github.com/GSG-G11/Ibrahim-reddit-clone#readme",
   "devDependencies": {
     "cross-env": "^7.0.3",
     "eslint": "^8.11.0",
