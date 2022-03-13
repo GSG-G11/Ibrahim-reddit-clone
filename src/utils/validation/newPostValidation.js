@@ -5,6 +5,6 @@ const postSchema = Joi.object({
   description: Joi.string().required(),
 });
 
-const postValidation = (dataObj) => postSchema.validateAsync(dataObj);
+const newPostValidation = (dataObj) => postSchema.validateAsync(dataObj);
 
-module.exports = { postValidation };
+module.exports = { newPostValidation };
