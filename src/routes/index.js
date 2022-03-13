@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const {
-  signup, login, logout, addPost, editPost,
+  signup, login, logout, addPost, editPost, deletePost, saveUnsavePost,
 } = require('../controllers');
 const { getTokenFromCookies, verfiyUser } = require('../utils');
 
@@ -12,5 +12,7 @@ router.use(getTokenFromCookies);
 router.use(verfiyUser);
 router.post('/post/add', addPost);
 router.post('/post/edit', editPost);
+router.get('/post/:id/delete', deletePost);
+router.get('/post/:id/save', saveUnsavePost);
 
 module.exports = router;
