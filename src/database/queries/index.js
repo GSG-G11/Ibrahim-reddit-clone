@@ -9,6 +9,7 @@ const { deleteCommentQuery } = require('./deleteCommentQuery');
 const { deletePostQuery } = require('./deletePostQuery');
 const { editCommentQuery } = require('./editCommentQuery');
 const { editPostQuery } = require('./editPostQuery');
+const { getUserData } = require('./getUserData');
 const { hasUserSavedCommentQuery } = require('./hasUserSavedCommentQuery');
 const { hasUserSavedPostQuery } = require('./hasUserSavedPostQuery');
 const { hasUserVotedCommentQuery } = require('./hasUserVotedCommentQuery');
@@ -42,4 +43,5 @@ module.exports = {
   unsaveResavePostQuery,
   updateCommentVoteQuery,
   updatePostVoteQuery,
+  getUserData,
 };
