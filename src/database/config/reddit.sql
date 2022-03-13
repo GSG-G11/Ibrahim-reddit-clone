@@ -21,7 +21,7 @@ CREATE TABLE "comments"(
 );
 CREATE TABLE "saved_posts"(
     "id" SERIAL PRIMARY KEY,
-    "isPostSaved" BOOLEAN,
+    "is_post_saved" BOOLEAN,
     "user_id" INT REFERENCES users(id) ON DELETE CASCADE,
     "post_id" INT REFERENCES posts(id) ON DELETE CASCADE
 );
@@ -34,7 +34,7 @@ CREATE TABLE "posts_votes"(
 
 CREATE TABLE "saved_comments"(
     "id" SERIAL PRIMARY KEY,
-    "isCommentSaved" BOOLEAN,
+    "is_comment_saved" BOOLEAN,
     "user_id" INT REFERENCES users(id) ON DELETE CASCADE,
     "comment_id" INT REFERENCES comments(id) ON DELETE CASCADE
 );
