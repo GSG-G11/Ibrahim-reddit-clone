@@ -20,11 +20,11 @@ router.get('/post/:postId/save', saveUnsavePost);
 router.get('/post/:postId/upvote', upVotePost);
 router.get('/post/:postId/downvote', downVotePost);
 
-router.get('/post/:postId/comment/add', addComment);
-router.get('/post/:postId/comment/edit', editComment);
-router.get('/post/:postId/comment/:commentId/delete', deleteComment);
-router.get('/post/:postId/comment/:commentId/save', saveUnsaveComment);
-router.get('/post/:postId/comment/:commentId/upvote', upVoteComment);
-router.get('/post/:postId/comment/:commentId/downvote', downVoteComment);
+router.post('/comment/add', addComment);
+router.post('/comment/edit', editComment);
+router.get('/comment/:commentId/delete', deleteComment);
+router.get('/comment/:commentId/save', saveUnsaveComment);
+router.get('/comment/:commentId/upvote', upVoteComment);
+router.get('/comment/:commentId/downvote', downVoteComment);
 
 module.exports = router;
