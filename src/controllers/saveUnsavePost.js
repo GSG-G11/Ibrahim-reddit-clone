@@ -14,7 +14,7 @@ const saveUnsavePost = (req, res) => {
         const { saveId, saveStatus } = dbRes;
         return unsaveResavePostQuery({ saveId, newSaveStatus: !saveStatus });
       } // chained nested promises down for perfomance purpose
-      return checkPostIdQuery({ postId }).then(addPostToSavedQuery({ postId, userId }));
+      return checkPostIdQuery({ postId }).then(() => addPostToSavedQuery({ postId, userId }));
     })
     .then((data) => res.json(data))
     .catch(() => res.json(customizedError(400, 'bad request')));

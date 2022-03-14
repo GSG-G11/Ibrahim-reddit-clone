@@ -17,7 +17,8 @@ const downVotePost = (req, res) => {
         }
         return updatePostVoteQuery({ voteId, voteValue: -1 });
       } // chained nested promises down for perfomance purpose
-      return checkPostIdQuery({ postId }).then(addPostVoteQuery({ postId, userId, voteValue: -1 }));
+      return checkPostIdQuery({ postId })
+        .then(() => addPostVoteQuery({ postId, userId, voteValue: -1 }));
     })
     .then((data) => res.json(data));
 };
