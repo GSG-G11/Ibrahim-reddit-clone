@@ -13,7 +13,7 @@ const saveUnsavePost = (req, res) => {
       if (dbRes) {
         const { saveId, saveStatus } = dbRes;
         return unsaveResavePostQuery({ saveId, newSaveStatus: !saveStatus });
-      } // nested promises down for perfomance purpose
+      } // chained nested promises down for perfomance purpose
       return checkPostIdQuery({ postId }).then(addPostToSavedQuery({ postId, userId }));
     })
     .then((data) => res.json(data))
