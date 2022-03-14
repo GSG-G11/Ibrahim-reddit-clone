@@ -2,7 +2,7 @@ const { deletePostQuery } = require('../database/queries');
 const { postIdValidation } = require('../utils/validation');
 
 const deletePost = (req, res) => {
-  const postId = req.params.id;
+  const { postId } = req.params;
   const userId = req.user.id;
   postIdValidation(req.params)
     .then(() => deletePostQuery({ postId, userId }))

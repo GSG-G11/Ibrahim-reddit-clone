@@ -3,7 +3,7 @@ const { customizedError } = require('../utils');
 const { postIdValidation } = require('../utils/validation');
 
 const saveUnsavePost = (req, res) => {
-  const postId = req.params.id;
+  const { postId } = req.params;
   const userId = req.user.id;
   postIdValidation(req.params)
     .then(() => hasUserSavedPostQuery({ postId, userId }))
