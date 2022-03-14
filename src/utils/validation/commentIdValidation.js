@@ -1,7 +1,6 @@
 const Joi = require('joi');
 
 const idSchema = Joi.object({
-  postId: Joi.number().required(),
   commentId: Joi.number().required(),
 });
 
