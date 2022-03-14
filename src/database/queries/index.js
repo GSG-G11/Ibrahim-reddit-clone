@@ -5,6 +5,7 @@ const { addNewUserQuery } = require('./addNewUserQuery');
 const { addPostQuery } = require('./addPostQuery');
 const { addPostToSavedQuery } = require('./addPostToSavedQuery');
 const { addPostVoteQuery } = require('./addPostVoteQuery');
+const { checkPostIdQuery } = require('./checkPostIdQuery');
 const { deleteCommentQuery } = require('./deleteCommentQuery');
 const { deletePostQuery } = require('./deletePostQuery');
 const { editCommentQuery } = require('./editCommentQuery');
@@ -44,4 +45,5 @@ module.exports = {
   updateCommentVoteQuery,
   updatePostVoteQuery,
   getUserData,
+  checkPostIdQuery,
 };
