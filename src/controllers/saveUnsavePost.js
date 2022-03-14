@@ -1,4 +1,6 @@
-const { hasUserSavedPostQuery, addPostToSavedQuery, unsaveResavePostQuery } = require('../database/queries');
+const {
+  hasUserSavedPostQuery, addPostToSavedQuery, unsaveResavePostQuery, checkPostIdQuery,
+} = require('../database/queries');
 const { customizedError } = require('../utils');
 const { postIdValidation } = require('../utils/validation');
 
@@ -11,8 +13,8 @@ const saveUnsavePost = (req, res) => {
       if (dbRes) {
         const { saveId, saveStatus } = dbRes;
         return unsaveResavePostQuery({ saveId, newSaveStatus: !saveStatus });
-      }
-      return addPostToSavedQuery({ postId, userId });
+      } // nested promises down for perfomance purpose
+      return checkPostIdQuery({ postId }).then(addPostToSavedQuery({ postId, userId }));
     })
     .then((data) => res.json(data))
     .catch(() => res.json(customizedError(400, 'bad request')));

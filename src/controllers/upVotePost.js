@@ -1,4 +1,6 @@
-const { hasUserVotedPostQuery, addPostVoteQuery, updatePostVoteQuery } = require('../database/queries');
+const {
+  hasUserVotedPostQuery, addPostVoteQuery, updatePostVoteQuery, checkPostIdQuery,
+} = require('../database/queries');
 // const { customizedError } = require('../utils');
 const { postIdValidation } = require('../utils/validation');
 
@@ -14,8 +16,8 @@ const upVotePost = (req, res) => {
           return updatePostVoteQuery({ voteId, voteValue: 0 });
         }
         return updatePostVoteQuery({ voteId, voteValue: 1 });
-      }
-      return addPostVoteQuery({ postId, userId, voteValue: 1 });
+      } // nested promises down for perfomance purpose
+      return checkPostIdQuery({ postId }).then(addPostVoteQuery({ postId, userId, voteValue: 1 }));
     })
     .then((data) => res.json(data));
 };
