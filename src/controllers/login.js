@@ -17,7 +17,7 @@ const login = (req, res, next) => {
       if (isMatch) return signToken({ id, username });
       throw customizedError(400, 'wrong username or password');
     })
-    .then((token) => res.cookie('token', token).json({ redirect: '/' }))
+    .then((token) => res.cookie('token', token, { maxAge: 31536000000, httpOnly: true }).cookie('username', username, { maxAge: 31536000000 }).cookie('userId', id, { maxAge: 31536000000 }).json({ redirect: '/' }))
     .catch((err) => next(err));
 };
 module.exports = { login };
