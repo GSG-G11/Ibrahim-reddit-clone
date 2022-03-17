@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+      integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Reddit</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="./js/main.js" defer></script>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img src="./img/logo.png" alt="reddit logo" />
+      </div>
+      <div class="btns_logged">
+        <button class="signup" onclick="location.href='/signup'">
+          Sign up
+        </button>
+        <button class="login" onclick="location.href='/login'">Log in</button>
+      </div>
+    </nav>
+    <div class="btns_logged">
+      <button class="login addpost hidden">Add Post</button>
+    </div>
+    <main>
+      <!-- <div class="post">
+           <div class="votes">
+                <button><i class="fas fa-arrow-up"></i></button>
+                <span class="count">0</span>
+                <button class="active"><i class="fas fa-arrow-down"></i></button>
+           </div>
+           <div class="content_post">
+               <div class="head_post">
+                   <a href="/orifke" class="avatar">
+                        <img src="https://imageresizer.static9.net.au/S_JG54IIgq3avHrpJxk7KVoQUsY=/500x0/https%3A%2F%2Fprod.static9.net.au%2Ffs%2F7081f766-6d2a-4371-88b9-0663ab143c0b" alt="">
+                   </a>
+                   <div class="info_poster">
+                    <a href="/orifke" class="username">ibrahim jomaa</a>
+                       <span class="date_post" > 20 hours ago</span>
+                   </div>
+                   <div class="join_post">
+                       <button>Join</button>
+                   </div>
+               </div>
+               <div class="titles_post">
+                   <div class="title_post">
+                       <span>Lorem ipsum dolor sit amet consectetur adipisicing.</span>
+                   </div>
+                   <div class="text_post">
+                       <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore praesentium hic officia debitis sint obcaecati laudantium voluptatem temporibus fugiat ducimus ipsum, sed nesciunt doloribus, explicabo quidem expedita, doloremque dolorum nulla.</span>
+                   </div>
+               </div>
+               <div class="footer_post">
+                    <div class="comments">
+                        <i class="far fa-comment"></i>
+                    </div>
+                    <div class="save">
+                        <i class="far fa-bookmark"></i>
+                    </div>
+                    <div class="delete">
+                        <i class="far fa-trash-alt"></i>
+                    </div>
+               </div>
+           </div>
+        </div>      -->
+    </main>
+    
+    <div class="modal hidden">
+        <div class="add-post-form">
+            <form class="form-add-post form_login" >
+                <input name="title" type="text" placeholder="Title" required/>
+                <input name="description" type="text" placeholder="Description" required/>
+                <input class="btn" type="submit" value="Add Post" />
+              </form>
+        </div>
+      <div class="overlay"></div>
+    </div>
+  </body>
+</html>
