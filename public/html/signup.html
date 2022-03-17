@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+      integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Reddit</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../js/signup.js" defer></script>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img src="../img/logo.png" alt="reddit logo" />
+      </div>
+      <div class="btns_logged">
+        <button class="signup" onclick="location.href='/signup'">Sign up</button>
+        <button class="login" onclick="location.href='/login'">Log in</button>       
+      </div>
+    </nav>
+
+    <div class="bowl_login">
+      <form class="form_signup" >
+        <input name="username" type="text" placeholder="username" required/>
+        <input name="email" type="text" placeholder="email" required/>
+        <input name="password" type="password" placeholder="password" required/>
+        <input name="confirm" type="password" placeholder="confirm password" required/>
+        <input class="btn" type="submit" value="Sign Up" />
+      </form>
+    </div>
+  </body>
+</html>

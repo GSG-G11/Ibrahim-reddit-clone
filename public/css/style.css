@@ -1,0 +1,277 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+a:visited,
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+nav {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  border: 1px solid #eee;
+  width: 100%;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.btns_logged button {
+  width: 120px;
+  height: 40px;
+  border-radius: 50px;
+  border: 1px solid rgb(62, 152, 255);
+  transition: .2s;
+}
+.btns_logged button:hover {
+  color: #fff;
+  background-color: rgb(62, 152, 255) !important;
+
+}
+
+.login {
+  color: #fff;
+  background-color: rgb(62, 152, 255) !important;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post {
+  width: 600px;
+  margin-top: 20px;
+  display: flex;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.votes {
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content_post {
+  width: calc(100% - 50px);
+}
+
+.votes button {
+  width: 30px;
+  height: 30px;
+  transition: 0.2s;
+  border-radius: 10px;
+  border: 1px solid #ff440060;
+  margin: 10px 0;
+}
+.votes button:hover {
+  color: #fff;
+  background-color: #ff4500;
+}
+
+.votes button.active {
+  border: none;
+  color: #ff4500;
+  background: rgba(230, 229, 229, 0.459);
+}
+
+.head_post {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.avatar img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.info_poster {
+  margin-left: 10px;
+}
+
+.info_poster span {
+  display: block;
+  line-height: 23px;
+}
+.username {
+  font-size: 1.1rem;
+}
+
+.date_post {
+  font-size: 0.8rem;
+}
+
+.join_post {
+  margin-left: auto;
+}
+.join_post button {
+  width: 60px;
+  height: 30px;
+  transition: 0.2s;
+  border-radius: 50px;
+  background-color: rgb(62, 152, 255);
+  color: #fff;
+}
+
+.join_post button:hover {
+  color: #000;
+  background-color: transparent;
+  border: 1px solid rgb(62, 152, 255);
+}
+
+.titles_post {
+  padding: 15px;
+  line-height: 22px;
+}
+
+.footer_post {
+  display: flex;
+  height: 44px;
+  align-items: center;
+}
+
+.footer_post div {
+  margin-left: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  user-select: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer_post div:hover {
+  background-color: #eee;
+}
+
+.footer_post div i {
+  font-size: 1.2rem;
+}
+
+/* login */
+
+.bowl_login {
+  height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form_login {
+  width: 300px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.form_login input {
+  width: 100%;
+  height: 40px;
+  padding-left: 5px;
+  outline: none;
+  border: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.form_login input.btn {
+  cursor: pointer;
+  background-color: rgb(62, 152, 255);
+  color: #fff;
+}
+
+
+/* home */
+.addpost{
+margin-top: 20px;
+}
+.modal {
+  position: fixed;
+  top:0;
+  width:100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hidden{
+  display: none;
+}
+
+.overlay{
+  width:100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.add-post-form{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 50%;
+  height: 50%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+/* signup */
+.form_signup {
+  width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.form_signup input {
+  width: 100%;
+  height: 40px;
+  padding-left: 5px;
+  outline: none;
+  border: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.form_signup input.btn {
+  cursor: pointer;
+  background-color: rgb(62, 152, 255);
+  color: #fff;
+}

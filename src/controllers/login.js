@@ -18,6 +18,12 @@ const login = (req, res, next) => {
       throw customizedError(400, 'wrong username or password');
     })
     .then((token) => res.cookie('token', token, { maxAge: 31536000000, httpOnly: true }).cookie('info', JSON.stringify({ username, id }), { maxAge: 31536000000 }).json({ redirect: '/' }))
-    .catch((err) => next(err));
+    .catch((err) => {
+      if (err.details) {
+        res.json(customizedError(400, err.details[0].message));
+      } else {
+        res.json(err);
+      }
+    });
 };
 module.exports = { login };

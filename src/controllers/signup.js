@@ -1,5 +1,6 @@
 const { hash } = require('bcrypt');
 const { isEmailTakenQuery, isUsernameTakenQuery, addNewUserQuery } = require('../database/queries');
+const { customizedError } = require('../utils');
 const { signupValidation } = require('../utils/validation');
 const { login } = require('./login');
 
@@ -11,6 +12,12 @@ const signup = (req, res, next) => {
     .then((hashedPassword) => addNewUserQuery({ username, email, hashedPassword }))
     .then(() => res.status(201))
     .then(() => login({ ...req, body: { username, password } }, res, next))
-    .catch((err) => next(err));
+    .catch((err) => {
+      if (err.details) {
+        res.json(customizedError(400, err.details[0].message));
+      } else {
+        res.json(err);
+      }
+    });
 };
 module.exports = { signup };
