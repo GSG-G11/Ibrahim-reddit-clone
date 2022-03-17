@@ -91,11 +91,15 @@ const renderDom = (array) => {
 
 const update = (endpoint) => {
   fetch(endpoint)
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.redirect) window.location.href = data.redirect;
+    })
     .then(() => fetch('/home'))
     .then((res) => res.json())
     .then(renderDom);
 };
-update('');
+update('/home');
 
 addPost.addEventListener('click', () => {
   modal.classList.toggle('hidden');
